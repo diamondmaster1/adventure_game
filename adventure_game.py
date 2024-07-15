@@ -16,17 +16,20 @@ def dice():
 hero_health=100
 hero_skill=5
 hero_strength=10
+hero_level=1
+current_exp=0
 
 goblin_health=110
 goblin_skill=7
 goblin_strength=12
+goblin_level=3
 
 def hero_attack():
     global goblin_health
     if dice()>hero_skill:
         print("you have hit the goblin")
         time.sleep(0.5)
-        damage=dice()*hero_strength
+        damage=dice()*hero_level
         time.sleep(0.5)
         print(damage,"damage")
         time.sleep(0.5)
@@ -44,7 +47,7 @@ def goblin_attack():
     if dice()>goblin_skill:
         print("you have hit the hero")
         time.sleep(0.5)
-        damage=dice()*goblin_strength
+        damage=dice()*goblin_level
         time.sleep(0.5)
         print(damage,"damage")
         time.sleep(0.5)
@@ -58,6 +61,8 @@ def goblin_attack():
 
 
 def goblin_fight_hero():
+    global hero_level
+    global current_exp
     while hero_health > 0:
         hero_attack()
         if goblin_health > 0:
@@ -66,7 +71,19 @@ def goblin_fight_hero():
                 print("you are dead")
                 break
         else:
-            print("you have won the battle but not the war")
+            print("you win!!!!!!")
+            exp=random.randint(5,10)
+            for i in range(exp):
+                current_exp += i
+                print("you have gained",current_exp)
+                if current_exp > 500:
+                    hero_level += 1
+                    print("you have just leveled up")
+                    time.sleep(0.5)
+                    print("your level is now",hero_level)
+                else:
+                    print("you have not leveled up yet")
+                break
             break
 
 
@@ -89,7 +106,7 @@ read("you have accquired the missiles")
 time.sleep(0.5)
 read("it will be added to your inventory")
 time.sleep(0.5)
-inventory=inventory.append("missiles")
+inventory.append("missiles")
 print(inventory)
 read("There is a collosal stone wall in front of you")
 time.sleep(0.5)
@@ -115,7 +132,9 @@ if choice_1 == "icy depths":
     time.sleep(0.5)
     read("It will be added into your inventory")
     time.sleep(0.5)
+    inventory.append("warm coat")
     print(inventory)
+    time.sleep(0.5)
     read("you start to feel as if your heart is flooding in with emotions again")
     time.sleep(0.5)
     read("You start to dance as if you were a child again")
@@ -130,8 +149,15 @@ if choice_1 == "icy depths":
     time.sleep(0.5)
     choice_2=input("do you decide to 'walk as if you were blind' or 'accquire a flashlight in order to see'? ")
     if choice_2 == "walk as if you were blind":
-        read("you decide the dumb option but a brave one in order to become a hero")
+        read("you decide to pick the dumb option but a brave one in order to become 'the' hero")
         time.sleep(0.5)
+        read("you start to stumble")
+        time.sleep(0.5)
+        read("and suddenly a goblin appears from out of nowhere;it is time to fight hero")
+        time.sleep(0.5)
+        goblin_fight_time()
+        time.sleep(0.5)
+        # read("")
 
     
 
