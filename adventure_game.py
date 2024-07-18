@@ -193,51 +193,106 @@ def ice_giant_fight_time():
 def item_shop():
     global hero_berries
     global hero_strength
-    weapons={"shimmering katana":"20 berries",
-             "the sword of Kyros":"45 berries",
+    global hero_health
+    global hero_magic
+    weapons={"Shimmering Katana":"20 berries",
+             "The Sword of Kyros":"45 berries",
              "Yubashiri":"500 berries"}
+    items={"Water":"10 berries",
+           "Fire Spirit":"25 berries",
+           "Ope Ope no mi":"1000 berries"}
     buying=input("Would you like to come in (y/n)")
     if buying == "y":
-        weapons.items()
-        for key,value in weapons.items():
-            print(key,value)
-        buying_weapon=input("What would you like to buy? ")
-        if buying_weapon == "shimmering katana":
-            print("thank you for purchasing the 'shimmering katana'")
-            time.sleep(0.5)
-            print("It will be added into your inventory")
-            time.sleep(0.5)
-            inventory.append("shimmering katana")
-            print(inventory)
-            time.sleep(0.5)
-            hero_berries -= 20
-            print("you have",hero_berries,"berries left")
-            time.sleep(0.5)
-            print("Thank you for buying, hope to see you soon")
-        elif buying_weapon == "the sword of Kyros":
-            print("thank you for purchasing the 'the sword of Kyros'")
-            time.sleep(0.5)
-            print("It will be added into your inventory")
-            time.sleep(0.5)
-            inventory.append("the sword of Kyros")
-            print(inventory)
-            time.sleep(0.5)
-            hero_berries -= 45
-            print("you have",hero_berries,"berries left")
-            time.sleep(0.5)
-            print("Thank you for buying, hope to see you soon")
-        elif buying_weapon == "Yubashiri":
-            print("thank you for purchasing 'Yubashiri'")
-            time.sleep(0.5)
-            print("It will be added into your inventory")
-            time.sleep(0.5)
-            inventory.append("Yubashiri")
-            print(inventory)
-            time.sleep(0.5)
-            hero_berries -= 500
-            print("you have",hero_berries,"berries left")
-            time.sleep(0.5)
-            print("Thank you for buying, hope to see you soon")            
+        what_to_buy=input("Would you like to buy an item or a weapon (i/w)")
+        if what_to_buy == "w":
+            weapons.items()
+            for key,value in weapons.items():
+                print(key,value)
+            buying_weapon=input("What would you like to buy? ")
+            if buying_weapon == "Shimmering Katana":
+                print("thank you for purchasing the 'shimmering katana'")
+                time.sleep(0.5)
+                print("It will be added into your inventory")
+                time.sleep(0.5)
+                inventory.append("shimmering katana")
+                print(inventory)
+                time.sleep(0.5)
+                hero_berries -= 20
+                print("you have",hero_berries,"berries left")
+                time.sleep(0.5)
+                print("Thank you for buying, hope to see you soon")
+            elif buying_weapon == "The Sword of Kyros":
+                print("thank you for purchasing the 'the sword of Kyros'")
+                time.sleep(0.5)
+                print("It will be added into your inventory")
+                time.sleep(0.5)
+                inventory.append("the sword of Kyros")
+                print(inventory)
+                time.sleep(0.5)
+                hero_berries -= 45
+                print("you have",hero_berries,"berries left")
+                time.sleep(0.5)
+                print("Thank you for buying, hope to see you soon")
+            elif buying_weapon == "Yubashiri":
+                print("thank you for purchasing 'Yubashiri'")
+                time.sleep(0.5)
+                print("It will be added into your inventory")
+                time.sleep(0.5)
+                inventory.append("Yubashiri")
+                print(inventory)
+                time.sleep(0.5)
+                hero_berries -= 500
+                print("you have",hero_berries,"berries left")
+                time.sleep(0.5)
+        if what_to_buy == "i":
+            items.items()
+            for key,value in items.items():
+                print(key,value)
+            buying_weapon=input("What would you like to buy? ")
+            if buying_weapon == "Water":
+                print("thank you for purchasing the 'Water'")
+                time.sleep(0.5)
+                print("you have just gained 20 health")
+                time.sleep(0.5)
+                hero_health += 20
+                print("your health is now",hero_health)
+                time.sleep(0.5)
+                hero_berries -= 10
+                print("you have",hero_berries,"berries left")
+                time.sleep(0.5)
+                print("Thank you for buying, hope to see you soon")
+            elif buying_weapon == "Fire Spirit":
+                print("thank you for purchasing the 'Fire Spirit'")
+                time.sleep(0.5)
+                print("It will be added into your inventory")
+                time.sleep(0.5)
+                inventory.append("fire spirit")
+                print(inventory)
+                time.sleep(0.5)
+                print("you have just gained 10 strength")
+                time.sleep(0.5)
+                hero_strength += 10
+                print("your strength is now",hero_strength)
+                time.sleep(0.5)
+                hero_berries -= 25
+                print("you have",hero_berries,"berries left")
+                time.sleep(0.5)
+                print("Thank you for buying, hope to see you soon")
+            elif buying_weapon == "Ope Ope no mi":
+                print("thank you for purchasing 'Ope Ope no mi'")
+                time.sleep(0.5)
+                print("It will be added into your inventory")
+                time.sleep(0.5)
+                inventory.append("ope ope no mi")
+                print(inventory)
+                time.sleep(0.5)
+                hero_berries -= 1000
+                print("you have",hero_berries,"berries left")
+                time.sleep(0.5)
+                print("you have just gained 50 magic")
+                time.sleep(0.5)
+                hero_magic += 50
+                print("your magic is now",hero_magic)
 fast_text("you enter a metal gate")
 time.sleep(0.5)
 fast_text("you see a goblin blocking your path;time to fight hero")
