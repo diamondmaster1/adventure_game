@@ -371,6 +371,13 @@ def item_shop():
                 time.sleep(0.5)
                 hero_magic += 50
                 print("your magic is now",hero_magic)
+
+# def restaurant ():
+#     global hero_berries
+#     global hero_health
+#     global hero_strength
+#     global current_exp
+#     food_menu={"":"",}
 fast_text("you enter a metal gate")
 time.sleep(0.5)
 fast_text("you see a goblin blocking your path;time to fight hero")
@@ -510,3 +517,19 @@ if chocie_0 == "y":
             time.sleep(0.5)
             item_shop()
             time.sleep(0.5)
+            fast_text("You continue to wander around;wondering where your next meal is? ")
+            time.sleep(0.5)
+            fast_text("You suddenly see a collsol building in front of you which has a sense of duality")
+            time.sleep(0.5)
+            fast_text("You find the infrastructure odd and perplexing but oddly inspiring and grand")
+            time.sleep(0.5)
+            choice_3=fast_text("Do you wish to enter the building? (y/n)")
+            if choice_3 == "y":
+                fast_text("You decide to enter the building 'of doom? '")
+                time.sleep(0.5)
+                fast_text("You suddenly find yourself, mouth agap as you take in the charming and handsome arichtecture of a chair")
+                time.sleep(0.5)
+                fast_text("'Hey, what are you doing here?'A stranger exclaimed. You explain that you stumbled across this place as you needed 'help'")
+                time.sleep(0.5)
+                fast_text("You were causally surprised as he decided to serve you some food 'for a price of course'as you sign with relief and regret")
+                time.sleep(0.5)
