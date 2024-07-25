@@ -372,12 +372,66 @@ def item_shop():
                 hero_magic += 50
                 print("your magic is now",hero_magic)
 
-# def restaurant ():
-#     global hero_berries
-#     global hero_health
-#     global hero_strength
-#     global current_exp
-#     food_menu={"":"",}
+def restaurant ():
+    global hero_berries
+    global hero_health
+    global hero_strength
+    global current_exp
+    food_menu={"Prawn cocktail crisps":"20 berries",
+               "Thick chicken thigh":"100 berries",
+               "One slice of pizza":"500 berries"}
+    choice_food=input("Do you want to eat (y/n)? ")
+    if choice_food == "y":
+        food_menu.items()
+        for key,value in food_menu.items():
+            print(key,value)
+        eating_food=input("What would you like to eat? ")
+        if eating_food == "Prawn cocktail crisps":
+            print("Thank you for buying 'Prawn cocktail crisps")
+            time.sleep(0.5)
+            hero_berries -= 20
+            print("you have",hero_berries,"left")
+            time.sleep(0.5)
+            hero_health -= 15
+            print("your current health is",hero_health)
+            time.sleep(0.5)
+            current_exp += 5
+            print("your current exp is",current_exp)
+            time.sleep(0.5)
+            print("Thank you for eating;hope you come again soon")
+        elif eating_food == "Thick chicken thigh":
+            print("Thank you for buying 'Thick chicken thigh")
+            time.sleep(0.5)
+            hero_berreis -= 100
+            print("You have",hero_berries,"left")
+            time.sleep(0.5)
+            hero_health += 50
+            print("your current health is",hero_health)
+            time.sleep(0.5)
+            hero_strength += 25
+            print("Your current strength is",hero_strength)
+            time.sleep(0.5)
+            current_exp += 50
+            print("Your current exp is",current_exp)
+            time.sleep(0.5)
+            print("Thank you for eating;hope you come again soon")
+        elif eating_food == "One slice of pizza":
+            print("Thank you for buying 'One splice of pizza")
+            time.sleep(0.5)
+            hero_berries -= 500
+            print("You have",hero_berries,"left")
+            time.sleep(0.5)
+            hero_health -= 5
+            print("Your current health is",hero_health)
+            time.sleep(0.5)
+            hero_strength += 5
+            print("Your current strength is",hero_strength)
+            time.sleep(0.5)
+            current_exp += 200
+            print("Your current exp is",current_exp)
+            time.sleep(0.5)
+            print("Thank you for eating;hope you come again soon")
+            
 fast_text("you enter a metal gate")
 time.sleep(0.5)
 fast_text("you see a goblin blocking your path;time to fight hero")
@@ -390,6 +444,7 @@ fast_text("it will be added to your inventory")
 time.sleep(0.5)
 inventory.append("missiles")
 print(inventory)
+time.sleep(0.5)
 fast_text("you suddenly see a giantic figure in the distance")
 time.sleep(0.5)
 fast_text("you are naturally hesitate to approach")
@@ -533,3 +588,6 @@ if chocie_0 == "y":
                 time.sleep(0.5)
                 fast_text("You were causally surprised as he decided to serve you some food 'for a price of course'as you sign with relief and regret")
                 time.sleep(0.5)
+                restaurant()
+                time.sleep(0.5)
+                # fast_text("")
